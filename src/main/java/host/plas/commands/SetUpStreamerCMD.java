@@ -432,7 +432,7 @@ public class SetUpStreamerCMD extends ModuleCommand {
                 case "set-link":
                 case "commands":
                     for (StreamerSetup setup : StreamersUnite.getStreamerConfig().getSetups()) {
-                        CosmicSender player = UserUtils.getOrCreateSender(setup.getStreamerUuid().toString());
+                        CosmicSender player = UserUtils.getOrCreateSender(setup.getStreamerUuid().toString()).orElse(null);
                         if (player == null) continue;
 
                         if (player.getCurrentName() != null &&

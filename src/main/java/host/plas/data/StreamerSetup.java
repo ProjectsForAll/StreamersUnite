@@ -179,7 +179,8 @@ public class StreamerSetup implements Comparable<StreamerSetup> {
     }
 
     public void tellStreamLinkCurrentlyLive(CosmicSender... to) {
-        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString());
+        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString()).orElse(null);
+        if (player == null) return;
 
         String playerName = player.getUuid();
         try {
@@ -198,7 +199,8 @@ public class StreamerSetup implements Comparable<StreamerSetup> {
     }
 
     public void tellStreamLinkGoingLive(CosmicSender... to) {
-        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString());
+        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString()).orElse(null);
+        if (player == null) return;
 
         String playerName = player.getUuid();
         try {
@@ -219,7 +221,8 @@ public class StreamerSetup implements Comparable<StreamerSetup> {
     public void tellStreamLinkGoingOffline(CosmicSender... to) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString());
+        CosmicSender player = UserUtils.getOrCreateSender(getStreamerUuid().toString()).orElse(null);
+        if (player == null) return;
 
         String playerName = player.getUuid();
         try {

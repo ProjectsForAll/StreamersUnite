@@ -1,8 +1,8 @@
 package host.plas.config;
 
+import gg.drak.thebase.storage.resources.flat.simple.SimpleConfiguration;
 import host.plas.data.StreamerSetup;
 import host.plas.StreamersUnite;
-import tv.quaint.storage.resources.flat.simple.SimpleConfiguration;
 
 import java.util.*;
 

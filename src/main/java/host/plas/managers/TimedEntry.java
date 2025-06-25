@@ -1,9 +1,9 @@
 package host.plas.managers;
 
+import gg.drak.thebase.objects.Identifiable;
 import lombok.Getter;
 import lombok.Setter;
 import singularity.scheduler.BaseRunnable;
-import tv.quaint.objects.Identifiable;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentSkipListMap;

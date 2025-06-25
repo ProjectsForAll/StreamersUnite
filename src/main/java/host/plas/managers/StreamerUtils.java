@@ -14,14 +14,14 @@ public class StreamerUtils {
             boolean accept = false;
 
             for (String u : r.getNames()) {
-                if (u != null && ! u.isEmpty() && ! u.isBlank()) {
+                if (u != null && ! u.isBlank()) {
                     accept = true;
                     break;
                 }
             }
 
             return accept;
-        }).map(r -> UserUtils.getOrCreateSender(r.getUuid()));
+        }).flatMap(r -> UserUtils.getOrCreateSender(r.getUuid()));
     }
 
     public static Optional<CosmicSender> getOrGetSenderByName(String name) {
@@ -29,11 +29,11 @@ public class StreamerUtils {
         return optional.filter(u -> {
             boolean accept = false;
 
-            if (! u.isEmpty() && ! u.isBlank()) {
+            if (! u.isBlank()) {
                 accept = true;
             }
 
             return accept;
-        }).map(UserUtils::getOrCreateSender);
+        }).flatMap(UserUtils::getOrCreateSender);
     }
 }
